@@ -11,6 +11,6 @@ class customerInfo{
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetchAll();
-        return $equipes;
+        return $result;
     }
 }
