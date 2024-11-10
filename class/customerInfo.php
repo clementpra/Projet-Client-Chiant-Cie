@@ -11,6 +11,7 @@ class customerInfo{
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetchAll();
+        echo "coucou";
         return $result;
     }
 }
