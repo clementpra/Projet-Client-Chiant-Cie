@@ -10,7 +10,7 @@ class customerInfo{
         $requeteSQL = 'SELECT * FROM CustomersInfo';
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
-        $result = $requete->fetchAll();
+        $result = $requete->fetch(PDO::FETCH_ASSOC);
 
         return $result;
     }
