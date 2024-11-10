@@ -88,7 +88,7 @@
 <body>
 
 <div class="form-container">
-    <form id="clientForm" action="process_form.php" method="POST" onsubmit="return validateForm()">
+    <form id="clientForm" action="process_form.php" method="POST">
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -108,42 +108,6 @@
     </form>
     <div id="success-message" class="success"></div>
 </div>
-
-
-<script>
-function validateForm() {
-    let nom = document.getElementById('nom').value.trim();
-    let prenom = document.getElementById('prenom').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let valid = true;
-
-    document.getElementById('error-nom').textContent = '';
-    document.getElementById('error-prenom').textContent = '';
-    document.getElementById('error-email').textContent = '';
-
-    if (nom === "") {
-        document.getElementById('error-nom').textContent = 'Veuillez entrer un nom.';
-        valid = false;
-    }
-    if (prenom === "") {
-        document.getElementById('error-prenom').textContent = 'Veuillez entrer un prénom.';
-        valid = false;
-    }
-    if (email === "") {
-        document.getElementById('error-email').textContent = 'Veuillez entrer un email.';
-        valid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.getElementById('error-email').textContent = 'Veuillez entrer un email valide.';
-        valid = false;
-    }
-
-    if (valid) {
-        document.getElementById('success-message').textContent = 'Formulaire en cours d\'envoi...';
-    }
-
-    return valid;
-}
-</script>
 
 </body>
 </html>
