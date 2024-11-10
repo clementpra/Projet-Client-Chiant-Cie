@@ -1,6 +1,6 @@
 <?php
 
-include "./../process/dbConnector.php";
+include "/var/www/html/process/dbConnector.php";
 
 class customerInfo{
 
