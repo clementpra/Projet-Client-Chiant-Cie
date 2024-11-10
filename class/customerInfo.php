@@ -18,7 +18,7 @@ class customerInfo{
     static function addCustomerInfo($nom, $prenom, $email){
         $mysqlClient = PDOMySQLConnector::getClient();
 
-        $requeteSQL = 'INSERT INTO CustomersInfo (nom, prenom, email) VALUES (:nom, :prenom, :email)';
+        $requeteSQL = 'INSERT INTO CustomersInfo (Nom, Prénom, email) VALUES (:nom, :prenom, :email)';
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->bindParam(':nom', $nom);
         $requete->bindParam(':prenom', $prenom);
