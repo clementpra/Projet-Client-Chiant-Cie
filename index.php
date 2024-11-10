@@ -20,14 +20,15 @@
 
         /* Effet flou pour l'arrière-plan */
         body::before {
-            position: fixed;
+            content: "";
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('usine.jpg') center/cover no-repeat;
-            filter: blur(8px); /* Flou appliqué uniformément */
-            z-index: -1; /* Place l'image derrière le formulaire */
+            background: inherit;
+            filter: blur(8px);
+            z-index: -1;
         }
 
         /* Conteneur de formulaire */
