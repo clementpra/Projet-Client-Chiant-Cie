@@ -1,7 +1,7 @@
 <?php
 include_once "./class/customerInfo.php";
 
-echo "coucou test2";
+echo "{)9YbiIuM.e!7z(";
 
 echo customerInfo::getCustomerInfo();
 
