@@ -4,7 +4,7 @@ include_once "./../process/dbConnector.php";
 
 class customerInfo{
 
-    function getCustomerInfo(){
+    static function getCustomerInfo(){
         $mysqlClient = PDOMySQLConnector::getClient();
 
         $requeteSQL = 'SELECT * FROM CustomersInfo';
