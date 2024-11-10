@@ -7,7 +7,7 @@ class customerInfo{
     function getCustomerInfo(){
         $mysqlClient = PDOMySQLConnector::getClient();
 
-        $requeteSQL = 'SELECT * FROM \'customersInfo\'';
+        $requeteSQL = 'SELECT * FROM \'CustomersInfo\'';
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetchAll();
