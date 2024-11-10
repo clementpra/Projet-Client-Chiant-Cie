@@ -88,7 +88,7 @@
 <body>
 
 <div class="form-container">
-    <form id="clientForm" action="process_form.php" method="POST">
+    <form id="clientForm" action="./process/process_form.php" method="POST">
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
