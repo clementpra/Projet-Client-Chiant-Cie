@@ -1,6 +1,6 @@
 <?php
 
-include_once "./../process/dbConnector.php";
+include "./../process/dbConnector.php";
 
 class customerInfo{
 
@@ -11,7 +11,7 @@ class customerInfo{
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetchAll();
-        echo "coucou";
+
         return $result;
     }
 }
