@@ -108,7 +108,7 @@
 
 <script>
 console.log("script");
-window.location.replace("http://www.w3schools.com");
+window.location.replace("./vue/success.html");
 
 
 document.addEventListener("DOMContentLoaded", function() { //script executé au chargement de la page
