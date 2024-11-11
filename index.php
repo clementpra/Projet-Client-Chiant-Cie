@@ -108,7 +108,7 @@
 
 <script>
 console.log("script");
-window.location.replace("./vue/success.html");
+
 
 
 document.addEventListener("DOMContentLoaded", function() { //script executé au chargement de la page
@@ -121,6 +121,8 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
         let email = document.querySelector('#email').value;
         let result = await sendInfo(nom,prenom,email);
         console.log(result);
+        if(result == "success"){
+            window.location.replace("./vue/success.html");
     });
 });
 
