@@ -26,4 +26,19 @@ class customerInfo{
         $requete->execute();
         return "Success";
     }
+
+
+    static function getCustomerId($nom, $prenom){
+        $mysqlClient = PDOMySQLConnector::getClient();
+
+        $requeteSQL = 'SELECT idCustomer FROM CustomersInfo WHERE Nom LIKE :nom AND Prénom LIKE :prenom';
+        $requete = $mysqlClient->prepare($requeteSQL);
+        $requete->bindParam(':nom', $nom);
+        $requete->bindParam(':prenom', $prenom);
+        $requete->execute();
+        $result = $requete->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
 }

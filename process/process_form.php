@@ -10,6 +10,14 @@ $prenom = $_POST['prenom'];
 $email = $_POST['email'];
 
 
+$ids = customerInfo::getCustomerId($nom, $prenom);
+
+if ($ids != null) {
+    echo 'error';
+    return;
+}
+
+
 $result = customerInfo::addCustomerInfo($nom, $prenom, $email);
 
 if ($result == "Success") {
