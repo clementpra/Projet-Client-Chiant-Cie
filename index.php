@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
         console.log(result);
         if(result == "success"){
             window.location.replace("./vue/success.html");
-    });
+    }});
 });
 
 
