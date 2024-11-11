@@ -20,7 +20,7 @@ if ($ids != null) {
 $result = customerInfo::addCustomerInfo($nom, $prenom, $email);
 
 if ($result == "Success") {
-    echo 'success';
+    echo json_encode('success');
 } else {
-    echo "error";
+    echo json_encode("error");
 }
