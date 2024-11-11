@@ -92,17 +92,14 @@
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
-            <div id="error-nom" class="error"></div>
         </div>
         <div class="form-group">
             <label for="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom" required>
-            <div id="error-prenom" class="error"></div>
         </div>
         <div class="form-group">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
-            <div id="error-email" class="error"></div>
         </div>
         <button type="submit">Soumettre</button>
     </form>
@@ -121,46 +118,29 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
         let nom = document.querySelector('#nom').value;
         let prenom = document.querySelector('#prenom').value;
         let email = document.querySelector('#email').value;
-        console.log(nom);
-        console.log(prenom);
-        console.log(email);
+        let result = await sendInfo(nom,prenom,email);
+        console.log(result);
     });
 });
 
 
 
 
-async function sendPlayer(id,numberPlayers){//fonction pour ajouter un joueur
+async function sendInfo(nom,prenom,email){//fonction pour ajouter un joueur
         //let numberPlayers = 1;
-            let nom = document.querySelector('#name'+numberPlayers).value;
-            let prenom = document.querySelector('#lastName'+numberPlayers).value;
-            let phone = document.querySelector('#phoneNumber'+numberPlayers).value;
-            let email = document.querySelector('#email'+numberPlayers).value;
-            let is_captain = document.querySelector('#is_captain'+numberPlayers).checked;
             console.log(nom);
-            if (is_captain===true){
-                is_captain=1;
-            }else{
-                is_captain=0;
-            }
-            let pays = document.querySelector('#selector'+numberPlayers).value;
-            const result = await fetch("../controleurs/JoueurControleur.php?resource=addPlayer",
+
+            const result = await fetch("./process/process_form.php",
                 {
                     method: "POST",
                     body: new URLSearchParams({
                         nom: nom,
                         prenom: prenom,
-                        phone: phone,
                         email: email,
-                        is_captain: is_captain,
-                        pays: pays,
-                        id_equipe: id,
                         }),
         });
-    
     let clone = result.json();
-    return clone;
-    
+    return clone;  
 }
 
 </script>

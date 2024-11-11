@@ -13,7 +13,7 @@ $email = $_POST['email'];
 $result = customerInfo::addCustomerInfo($nom, $prenom, $email);
 
 if ($result == "Success") {
-    header("Location: ../vue/success.html");
+    echo 'success';
 } else {
-    echo "An error occured, please try again";
+    echo "error";
 }
