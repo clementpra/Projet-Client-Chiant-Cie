@@ -109,5 +109,15 @@
     <div id="success-message" class="success"></div>
 </div>
 
+<script>
+console.log("script");
+document.getElementById("matchForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut de la soumission du formulaire
+    console.log("submit");
+
+});
+
+</script>
+
 </body>
 </html>
