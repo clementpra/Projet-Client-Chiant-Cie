@@ -126,8 +126,7 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
 
 
 
-async function sendInfo(nom,prenom,email){//fonction pour ajouter un joueur
-        //let numberPlayers = 1;
+async function sendInfo(nom,prenom,email){//fonction pour envoyer les données du formulaire et les verifier
             console.log(nom);
 
             const result = await fetch("./process/process_form.php",

@@ -17,7 +17,6 @@ if ($ids != null) {
     return;
 }
 
-
 $result = customerInfo::addCustomerInfo($nom, $prenom, $email);
 
 if ($result == "Success") {
