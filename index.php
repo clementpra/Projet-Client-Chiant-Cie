@@ -88,7 +88,7 @@
 <body>
 
 <div class="form-container">
-    <form id="clientForm" action="./process/process_form.php" method="POST">
+    <form id="clientForm">
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -111,7 +111,7 @@
 
 <script>
 console.log("script");
-document.getElementById("matchForm").addEventListener("submit", function(event) {
+document.getElementById("clientForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Empêche le comportement par défaut de la soumission du formulaire
     console.log("submit");
 
