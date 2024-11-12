@@ -7,7 +7,7 @@ class customerInfo{
     static function getCustomerInfoForPrint(){
         $mysqlClient = PDOMySQLConnector::getClient();
 
-        $requeteSQL = 'SELECT Nom,Prénom,email FROM CustomersInfo';
+        $requeteSQL = 'SELECT Nom,Prénom,email FROM CustomersInfo where 1';
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
