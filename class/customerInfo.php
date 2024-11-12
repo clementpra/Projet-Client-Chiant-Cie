@@ -7,7 +7,7 @@ class customerInfo{
     static function getCustomerInfoForPrint(){
         $mysqlClient = PDOMySQLConnector::getClient();
 
-        $requeteSQL = 'SELECT Nom,Prénom,email FROM CustomersInfo where 1';
+        $requeteSQL = 'SELECT * FROM CustomersInfo where 1';
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetchAll(PDO::FETCH_ASSOC);
@@ -38,6 +38,16 @@ class customerInfo{
         $result = $requete->fetch(PDO::FETCH_ASSOC);
 
         return $result;
+    }
+
+    static function deleteCustomer($id){
+        $mysqlClient = PDOMySQLConnector::getClient();
+
+        $requeteSQL = 'DELETE FROM CustomersInfo WHERE idCustomer = :id';
+        $requete = $mysqlClient->prepare($requeteSQL);
+        $requete->bindParam(':id', $id);
+        $requete->execute();
+        return "Success";
     }
 
 }

@@ -109,9 +109,16 @@
 </div>
 
 <script>
-function deleteCustomer(id) {
+async function deleteCustomer(id) {
     if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
-        window.location.href = `delete_customer.php?id=${id}`;
+        const reponse = await fetch("../process/deleteCustomer.php", {
+            method: "POST",
+            body: new URLSearchParams({
+            action: 0,
+            id: id,
+            }),
+        });
+        window.location.href = `list.php`;
     }
 }
 </script>
