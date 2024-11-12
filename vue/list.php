@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    include "../class/customerInfo.php"
+    include "../class/customerInfo.php";
     ?>
     <title>Liste des inscrits</title>
 </head>
 <body>
     <?php
     $tabCustomer = customerInfo::getCustomerInfoForPrint();
-    echo $tabCustomer[1];
+    echo print_r($tabCustomer);
     echo "<table>";
     echo "<tr>";
     echo "<th>Nom</th>";
