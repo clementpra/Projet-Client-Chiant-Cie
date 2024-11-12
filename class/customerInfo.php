@@ -11,7 +11,6 @@ class customerInfo{
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
-
         return $result;
     }
 
