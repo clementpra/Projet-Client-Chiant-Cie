@@ -4,10 +4,10 @@ include "/var/www/html/process/dbConnector.php";
 
 class customerInfo{
 
-    static function getCustomerInfo(){
+    static function getCustomerInfoForPrint(){
         $mysqlClient = PDOMySQLConnector::getClient();
 
-        $requeteSQL = 'SELECT * FROM CustomersInfo';
+        $requeteSQL = 'SELECT Nom,Prénom,email FROM CustomersInfo';
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
