@@ -11,7 +11,7 @@
 <body>
     <?php
     $tabCustomer = customerInfo::getCustomerInfoForPrint();
-    echo print_r($tabCustomer);
+    echo $tabCustomer[1];
     echo "<table>";
     echo "<tr>";
     echo "<th>Nom</th>";
