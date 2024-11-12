@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des inscrits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Style du corps de la page */
         body {
@@ -59,6 +60,19 @@
             background-color: #f1f1f1;
         }
 
+        /* Bouton supprimer */
+        .delete-btn {
+            background-color: transparent;
+            border: none;
+            color: #d9534f;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .delete-btn:hover {
+            color: #c9302c;
+        }
+
         /* Responsivité pour petits écrans */
         @media (max-width: 600px) {
             th, td {
@@ -80,17 +94,27 @@
     echo "<th>Nom</th>";
     echo "<th>Prénom</th>";
     echo "<th>Email</th>";
+    echo "<th>Action</th>";
     echo "</tr>";
     foreach($tabCustomer as $customer){
         echo "<tr>";
         echo "<td>".$customer['Nom']."</td>";
         echo "<td>".$customer['Prénom']."</td>";
         echo "<td>".$customer['email']."</td>";
+        echo "<td><button class='delete-btn' onclick=\"deleteCustomer(".$customer['idCustomer'].")\"><i class='fas fa-trash-alt'></i></button></td>";
         echo "</tr>";
     }
     echo "</table>";    
     ?>
 </div>
+
+<script>
+function deleteCustomer(id) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
+        window.location.href = `delete_customer.php?id=${id}`;
+    }
+}
+</script>
 
 </body>
 </html>
