@@ -10,7 +10,7 @@ class customerInfo{
         $requeteSQL = 'SELECT Nom,Prénom,email FROM CustomersInfo where 1';
         $requete = $mysqlClient->prepare($requeteSQL);
         $requete->execute();
-        $result = $requete->fetch(PDO::FETCH_ASSOC);
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
