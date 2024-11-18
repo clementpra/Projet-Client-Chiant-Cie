@@ -11,7 +11,11 @@ $email = $_POST['email'];
 $ids = customerInfo::getCustomerId($nom, $prenom);
 
 if ($ids != null) {
-    echo 'error';
+    header('content-type: application/json');
+    echo json_encode(['success' => false,
+        'nom' => $nom,
+        'prenom' => $prenom,
+        'email' => $email]);
     return;
 }
 
