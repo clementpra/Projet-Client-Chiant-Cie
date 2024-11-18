@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/vue/images/favicon.ico">
     <title>Liste des inscrits</title>
     <link rel="stylesheet" href="./css/font.css">
     <style>
@@ -101,7 +102,7 @@
         echo "<td>".$customer['Nom']."</td>";
         echo "<td>".$customer['Prénom']."</td>";
         echo "<td>".$customer['email']."</td>";
-        echo "<td><button class='delete-btn' onclick=\"deleteCustomer(".$customer['idCustomer'].")\"><i class='fas fa-trash-alt'></i></button></td>";
+        echo "<td><button class='delete-btn' onclick=\"deleteCustomer(".$customer['idCustomer'].")\">Supprimer</button></td>";
         echo "</tr>";
     }
     echo "</table>";    

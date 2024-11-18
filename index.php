@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/vue/images/favicon.ico">
     <title>Formulaire Client</title>
     <style>
         /* Styles globaux pour le corps */
@@ -14,7 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('usine.jpg') center/cover no-repeat;
+            background: url('./vue/images/usine.jpg') center/cover no-repeat;
             overflow: hidden;
         }
 
