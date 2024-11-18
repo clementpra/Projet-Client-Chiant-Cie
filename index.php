@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
         let email = document.querySelector('#email').value;
         let result = await sendInfo(nom,prenom,email);
         console.log(result);
-        status= json.parse(result);
+        status= JSON.parse(result);
         if(status.success == true){
             window.location.replace("./vue/success.html");
         }else{
