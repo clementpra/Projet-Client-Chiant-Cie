@@ -120,9 +120,8 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
         let prenom = document.querySelector('#prenom').value;
         let email = document.querySelector('#email').value;
         let result = await sendInfo(nom,prenom,email);
-        console.log(result);
-        status= JSON.parse(result);
-        if(status.success == true){
+        console.log(result.success);
+        if(result.success == true){
             window.location.replace("./vue/success.html");
         }else{
             document.querySelector('#error-message').innerHTML = "Erreur lors de l'envoi du formulaire";
