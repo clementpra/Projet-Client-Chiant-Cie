@@ -2,13 +2,11 @@
 
 include "/var/www/html/class/customerInfo.php";
 
-
 $nom = $_POST['nom'];
 
 $prenom = $_POST['prenom'];
 
 $email = $_POST['email'];
-
 
 $ids = customerInfo::getCustomerId($nom, $prenom);
 
@@ -20,7 +18,15 @@ if ($ids != null) {
 $result = customerInfo::addCustomerInfo($nom, $prenom, $email);
 
 if ($result == "Success") {
-    echo json_encode('success');
+    header('content-type: application/json');
+    echo json_encode(['success' => true,
+        'nom' => $nom,
+        'prenom' => $prenom,
+        'email' => $email]);
 } else {
-    echo json_encode("error");
+    header('content-type: application/json');
+    echo json_encode(['success' => false,
+        'nom' => $nom,
+        'prenom' => $prenom,
+        'email' => $email]);
 }

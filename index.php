@@ -103,7 +103,7 @@
         </div>
         <button type="submit">Soumettre</button>
     </form>
-    <div id="success-message" class="success"></div>
+    <div id="error-message" class="error"></div>
 </div>
 
 <script>
@@ -121,17 +121,17 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
         let email = document.querySelector('#email').value;
         let result = await sendInfo(nom,prenom,email);
         console.log(result);
-        if(result == "success"){
+        if(result[success] == true){
             window.location.replace("./vue/success.html");
-    }});
+        }else{
+            document.querySelector('#error-message').innerHTML = "Erreur lors de l'envoi du formulaire";
+        }
+    }
+);
 });
-
-
-
 
 async function sendInfo(nom,prenom,email){//fonction pour envoyer les données du formulaire et les verifier
             console.log(nom);
-
             const result = await fetch("./process/process_form.php",
                 {
                     method: "POST",
