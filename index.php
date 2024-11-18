@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() { //script executé au 
         if(result.success == true){
             window.location.replace("./vue/success.html");
         }else{
-            document.querySelector('#error-message').innerHTML = "Erreur lors de l'envoi du formulaire";
+            document.querySelector('#error-message').innerHTML = "Erreur, l'utilisateur existe déjà";
         }
     }
 );
